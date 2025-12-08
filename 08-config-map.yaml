@@ -6,6 +6,5 @@ metadata:
     purpose: config
     env: dev
 data:
-  Course: "Devops"
+  Course: "DevOps"
   Duration: "120h"
-  
