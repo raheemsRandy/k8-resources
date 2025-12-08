@@ -7,6 +7,9 @@ metadata:
     component: mysql
     tier: backend
     environment: dev
+  annotations:
+  description: "This pod is created to demonstrate pod annotations"
+  jenkins: "https://jenkins.com/build/job/roboshop-catalogue/3"
 
 
 
@@ -14,4 +17,6 @@ spec:
   containers:
   - name: nginx
     image: nginx
-    
+
+
+
