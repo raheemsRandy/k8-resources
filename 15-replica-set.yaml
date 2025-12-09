@@ -15,14 +15,14 @@ spec:
       project: roboshop
       app: nginx 
 
-#pod definition
-template:
-    metadata:
-      labels:
-        purpose: rs-demo
-        project: roboshop
-        app: nginx 
-    spec:
-      containers:
-      - name: nginx
-        image: nginx
+  #pod definition
+  template:
+      metadata:
+        labels:
+          purpose: rs-demo
+          project: roboshop
+          app: nginx 
+      spec:
+        containers:
+        - name: nginx
+          image: nginx
