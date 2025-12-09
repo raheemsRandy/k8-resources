@@ -7,6 +7,7 @@ metadata:
     purpose: rs-demo
     project: roboshop
     app: nginx 
+
 spec:
   replicas: 3
   #these are the labels replicaset uses to create pod replicas this should mach pod labels
@@ -23,7 +24,8 @@ spec:
           purpose: rs-demo
           project: roboshop
           app: nginx 
+
       spec:
         containers:
         - name: nginx
-          image: nginx
+          image: nginx:stable-perl
