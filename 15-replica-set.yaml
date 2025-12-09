@@ -8,6 +8,7 @@ metadata:
     project: roboshop
     app: nginx 
 spec:
+  replicas: 3
   #these are the labels replicaset uses to create pod replicas this should mach pod labels
   selector:
     matchLabels:
