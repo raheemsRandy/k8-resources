@@ -40,7 +40,7 @@ spec:
     topology.kubernetes.io/zone: us-east-1c
 
   containers:
-  - name: app
+  - name: nginx
     image: nginx
     volumeMounts: #dockerrun -v host-path:container-path
     - name: persistent-storage
@@ -61,7 +61,7 @@ metadata:
 spec: 
   type: LoadBalancer
   selector:
-    purpose: bs-static-demo
+    purpose: ebs-static-demo
     project: roboshop
   ports:
     - protocol: TCP
