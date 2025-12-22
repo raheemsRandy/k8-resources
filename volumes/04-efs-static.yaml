@@ -7,7 +7,7 @@ spec:
     storage: 5Gi
   volumeMode: Filesystem
   accessModes:
-    - ReadWriteOnce
+    - ReadWriteMany
   storageClassName: "" # This should be mpty because its static provising
   persistentVolumeReclaimPolicy: Retain
   csi:
