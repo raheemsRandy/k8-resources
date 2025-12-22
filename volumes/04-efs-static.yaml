@@ -1,0 +1,69 @@
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: efs-static
+spec:
+  capacity:
+    storage: 5Gi
+  volumeMode: Filesystem
+  accessModes:
+    - ReadWriteOnce
+  storageClassName: "" # This should be mpty because its static provising
+  persistentVolumeReclaimPolicy: Retain
+  csi:
+    driver: efs.csi.aws.com
+    volumeHandle: fs-0b5c28c51df9a13a7
+
+---
+
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: efs-static
+spec:
+  accessModes:
+    - ReadWriteOnce
+  storageClassName: ""
+  resources:
+    requests:
+      storage: 5Gi
+
+---
+
+apiVersion: v1
+kind: Pod
+metadata:
+  name: nginx
+  labels:
+    purpose: efs-static-demo
+    project: roboshop
+
+  containers:
+  - name: nginx
+    image: nginx
+    volumeMounts: #dockerrun -v host-path:container-path
+    - name: persistent-storage
+      mountPath: /usr/share/nginx/html
+  volumes:
+  - name: persistent-storage
+    persistentVolumeClaim:
+      claimName: efs-static
+
+---
+
+apiVersion: v1
+kind: Service
+metadata: 
+  name: efs-static
+  labels: 
+    purpose: efs-static-demo
+    project: roboshop
+spec: 
+  type: LoadBalancer
+  selector:
+    purpose: efs-static-demo
+    project: roboshop
+  ports:
+    - protocol: TCP
+      port: 80 #serviceport
+      targetPort: 80 #containerport
