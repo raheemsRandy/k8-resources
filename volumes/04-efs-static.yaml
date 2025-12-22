@@ -22,7 +22,7 @@ metadata:
   name: efs-static
 spec:
   accessModes:
-    - ReadWriteOnce
+    - ReadWriteMany
   storageClassName: ""
   resources:
     requests:
