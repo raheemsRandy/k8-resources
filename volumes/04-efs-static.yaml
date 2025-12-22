@@ -37,7 +37,7 @@ metadata:
   labels:
     purpose: efs-static-demo
     project: roboshop
-
+spec:
   containers:
   - name: nginx
     image: nginx
