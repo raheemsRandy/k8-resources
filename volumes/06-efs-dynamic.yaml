@@ -41,7 +41,7 @@ metadata:
   labels: 
     purpose: efs-dynamic-demo
     project: roboshop
-spec: 
+spec:
   type: LoadBalancer
   selector:
     purpose: efs-dynamic-demo

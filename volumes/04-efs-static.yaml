@@ -31,7 +31,7 @@ kind: Pod
 metadata:
   name: nginx
   labels:
-    purpose: ebs-dynamic-demo
+    purpose: ebs-static-demo
     project: roboshop
 spec:
   containers:
@@ -48,14 +48,14 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: ebs-dynamic
+  name: ebs-static
   labels:
-    purpose: ebs-dynamic-demo
+    purpose: ebs-static-demo
     project: roboshop
 spec:
   type: LoadBalancer
   selector:
-    purpose: ebs-dynamic-demo
+    purpose: ebs-static-demo
     project: roboshop
   ports:
   - protocol: TCP

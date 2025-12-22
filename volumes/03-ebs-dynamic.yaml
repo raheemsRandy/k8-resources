@@ -5,7 +5,7 @@ metadata:
 spec:
   accessModes:
     - ReadWriteOnce
-  storageClassName: roboshop-ebs
+  storageClassName: roboshop-efs
   resources:
     requests:
       storage: 4Gi
@@ -36,12 +36,12 @@ spec:
 
 apiVersion: v1
 kind: Service
-metadata: 
+metadata:
   name: ebs-dynamic
-  labels: 
+  labels:
     purpose: ebs-dynamic-demo
     project: roboshop
-spec: 
+spec:
   type: LoadBalancer
   selector:
     purpose: ebs-dynamic-demo
