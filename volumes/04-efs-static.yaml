@@ -33,7 +33,7 @@ spec:
 apiVersion: v1
 kind: Pod
 metadata:
-  name: nginx-efs
+  name: nginx
   labels:
     purpose: efs-static-demo
     project: roboshop
