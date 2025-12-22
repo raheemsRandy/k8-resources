@@ -7,7 +7,7 @@ spec:
     storage: 5Gi
   volumeMode: Filesystem
   accessModes:
-    - ReadWriteMany
+    - ReadWriteOnce
   storageClassName: "" # This should be mpty because its static provising
   persistentVolumeReclaimPolicy: Retain
   csi:
@@ -22,7 +22,7 @@ metadata:
   name: efs-static
 spec:
   accessModes:
-    - ReadWriteMany
+    - ReadWriteOnce
   storageClassName: ""
   resources:
     requests:
